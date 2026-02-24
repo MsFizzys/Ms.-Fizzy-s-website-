@@ -1,0 +1,324 @@
+import React from 'react';
+import { Instagram, Mail, Menu, X } from 'lucide-react';
+
+const MsFizzysWebsite = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="bg-red-600 text-white py-4 px-6 sticky top-0 z-50 shadow-lg">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="flex items-center space-x-3">
+            <h1 className="text-2xl md:text-3xl font-bold">Ms. Fizzy's</h1>
+            <span className="hidden md:inline text-sm">Dirty Sodas</span>
+          </div>
+          
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-8">
+            <button onClick={() => scrollToSection('home')} className="hover:text-red-200 transition">Home</button>
+            <button onClick={() => scrollToSection('about')} className="hover:text-red-200 transition">About</button>
+            <button onClick={() => scrollToSection('menu')} className="hover:text-red-200 transition">Menu</button>
+            <button onClick={() => scrollToSection('services')} className="hover:text-red-200 transition">Services</button>
+            <button onClick={() => scrollToSection('contact')} className="hover:text-red-200 transition">Contact</button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 space-y-3">
+            <button onClick={() => scrollToSection('home')} className="block hover:text-red-200 transition">Home</button>
+            <button onClick={() => scrollToSection('about')} className="block hover:text-red-200 transition">About</button>
+            <button onClick={() => scrollToSection('menu')} className="block hover:text-red-200 transition">Menu</button>
+            <button onClick={() => scrollToSection('services')} className="block hover:text-red-200 transition">Services</button>
+            <button onClick={() => scrollToSection('contact')} className="block hover:text-red-200 transition">Contact</button>
+          </div>
+        )}
+      </nav>
+
+      {/* Hero Section */}
+      <section id="home" className="bg-gradient-to-b from-red-50 to-white py-20 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <img 
+            src="/placeholder.svg" 
+            alt="Ms. Fizzy's Logo" 
+            className="w-64 h-64 mx-auto mb-8 object-contain"
+          />
+          <h2 className="text-5xl md:text-6xl font-bold text-red-600 mb-4">Ms. Fizzy's</h2>
+          <p className="text-3xl md:text-4xl text-gray-800 mb-6">Dirty Sodas</p>
+          <p className="text-xl md:text-2xl text-gray-600 mb-8">Marin County's First Dirty Soda Company</p>
+          <button 
+            onClick={() => scrollToSection('menu')}
+            className="bg-red-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition shadow-lg"
+          >
+            See Our Menu
+          </button>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-red-600 mb-8 text-center">About Ms. Fizzy's</h2>
+          <div className="bg-red-50 rounded-2xl p-8 md:p-12">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+              Ms. Fizzy is fun and playful and makes delicious sweet treat drinks for the whole family. 
+              If you can't have dairy, you can substitute for oat milk or coconut milk. She wants people to enjoy life!
+            </p>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+              She wears a red apron, sometimes with frills around the edges and sometimes without. 
+              She has a mobile pop-up cart and will show up at your birthday party, wedding, fundraisers, 
+              or any other event that you want.
+            </p>
+            <p className="text-lg md:text-xl font-semibold text-red-600">
+              A woman-owned business, born and raised in Marin County.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Menu Section */}
+      <section id="menu" className="py-20 px-6 bg-gradient-to-b from-white to-red-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-red-600 mb-12 text-center">Our Menu</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {/* The DR. Fizz */}
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition">
+              <div className="h-80 bg-gray-100 flex items-center justify-center">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="The DR. Fizz" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-red-600 mb-3">The DR. Fizz</h3>
+                <p className="text-gray-700 mb-4">
+                  Dr. Pepper with a strawberry cream top and freeze dried strawberry topping.
+                </p>
+              </div>
+            </div>
+
+            {/* The Shirley Fizz */}
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition">
+              <div className="h-80 bg-gray-100 flex items-center justify-center">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="The Shirley Fizz" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-red-600 mb-3">The Shirley Fizz</h3>
+                <p className="text-gray-700 mb-4">
+                  Sprite with strawberry syrup and vanilla cream top, with maraschino cherry on top.
+                </p>
+              </div>
+            </div>
+
+            {/* Classic Fizz */}
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition">
+              <div className="h-80 bg-gray-100 flex items-center justify-center">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Classic Fizz" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-red-600 mb-3">Classic Fizz</h3>
+                <p className="text-gray-700 mb-4">
+                  Coke or Diet Coke with lime and coconut cream top and lime zest topping.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Pricing */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
+            <h3 className="text-3xl font-bold text-red-600 mb-6 text-center">Sizes & Pricing</h3>
+            <div className="space-y-4">
+              <div className="flex justify-between items-center text-lg md:text-xl">
+                <span className="font-semibold text-gray-800">Kids Size (12 oz)</span>
+                <span className="text-red-600 font-bold">$5</span>
+              </div>
+              <div className="flex justify-between items-center text-lg md:text-xl">
+                <span className="font-semibold text-gray-800">Regular (24 oz)</span>
+                <span className="text-red-600 font-bold">$6</span>
+              </div>
+            </div>
+            <p className="text-center text-gray-600 mt-6 italic">
+              Can't have dairy? Substitute for oat milk or coconut milk!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-red-600 mb-12 text-center">Services</h2>
+          <div className="bg-red-50 rounded-2xl p-8 md:p-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">
+              Mobile Pop-Up Cart
+            </h3>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8 text-center">
+              Ms. Fizzy's has no permanent location. You can find us at pop-ups or hire us for private events!
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <h4 className="text-xl font-bold text-red-600 mb-3">Perfect For:</h4>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">•</span>
+                    Birthday Parties
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">•</span>
+                    Weddings
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">•</span>
+                    Fundraisers
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">•</span>
+                    Corporate Events
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">•</span>
+                    Any Special Occasion!
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <h4 className="text-xl font-bold text-red-600 mb-3">Why Choose Us:</h4>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">•</span>
+                    Delicious treats for all ages
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">•</span>
+                    Dairy-free options available
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">•</span>
+                    Fun, playful experience
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">•</span>
+                    Woman-owned local business
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 mr-2">•</span>
+                    We bring the party to you!
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="bg-red-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition shadow-lg"
+              >
+                Book Us For Your Event
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-6 bg-gradient-to-b from-white to-red-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-red-600 mb-12 text-center">Get In Touch</h2>
+          
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <p className="text-xl text-gray-700 text-center mb-10">
+              Ready to add some fizz to your event? Reach out to us!
+            </p>
+
+            <div className="space-y-6">
+              <a 
+                href="mailto:msfizzysdrinks@gmail.com"
+                className="flex items-center justify-center space-x-4 bg-red-50 rounded-xl p-6 hover:bg-red-100 transition"
+              >
+                <Mail className="text-red-600" size={32} />
+                <span className="text-lg md:text-xl font-semibold text-gray-800">msfizzysdrinks@gmail.com</span>
+              </a>
+
+              <a 
+                href="https://www.instagram.com/ms.fizzys?igsh=MzRlODBiNWFlZA=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center space-x-4 bg-red-50 rounded-xl p-6 hover:bg-red-100 transition"
+              >
+                <Instagram className="text-red-600" size={32} />
+                <span className="text-lg md:text-xl font-semibold text-gray-800">@ms.fizzys</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-red-600 text-white py-8 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl font-bold mb-2">Ms. Fizzy's Dirty Sodas</h3>
+              <p className="text-red-100">Marin County's First Dirty Soda Company</p>
+            </div>
+            
+            <div className="flex space-x-6">
+              <a 
+                href="mailto:msfizzysdrinks@gmail.com"
+                className="hover:text-red-200 transition"
+                aria-label="Email"
+              >
+                <Mail size={28} />
+              </a>
+              <a 
+                href="https://www.instagram.com/ms.fizzys?igsh=MzRlODBiNWFlZA=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-red-200 transition"
+                aria-label="Instagram"
+              >
+                <Instagram size={28} />
+              </a>
+            </div>
+          </div>
+          
+          <div className="mt-8 pt-6 border-t border-red-500 text-center text-red-100">
+            <p>&copy; 2026 Ms. Fizzy's Dirty Sodas. All rights reserved.</p>
+            <p className="mt-2 text-sm">Woman-owned • Born and raised in Marin County</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default MsFizzysWebsite;
