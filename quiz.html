@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Ms. Fizzy's Drink Are You?</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-gradient { background: linear-gradient(to bottom, #fff5f5, #ffffff); }
+    </style>
+</head>
+<body class="min-h-screen bg-white">
+
+    <!-- Navigation -->
+    <nav class="bg-red-600 text-white py-4 px-6 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <a href="index.html">
+                    <img src="logo.png" alt="Ms. Fizzy's Logo" class="h-12 object-contain">
+                </a>
+                <span class="hidden md:inline text-sm">Dirty Sodas</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#home" class="hover:text-red-200 transition">Home</a>
+                <a href="index.html#about" class="hover:text-red-200 transition">About</a>
+                <a href="quiz.html" class="hover:text-red-200 transition">Quiz</a>
+                <a href="index.html#menu" class="hover:text-red-200 transition">Menu</a>
+                <a href="index.html#services" class="hover:text-red-200 transition">Services</a>
+                <a href="index.html#contact" class="hover:text-red-200 transition">Contact</a>
+                <a href="https://www.instagram.com/ms.fizzys" target="_blank" rel="noopener noreferrer" class="hover:text-red-200 transition" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden" onclick="toggleMobileMenu()" id="mobile-menu-button">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg id="close-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+            <a href="index.html#home" class="block hover:text-red-200 transition py-2">Home</a>
+            <a href="index.html#about" class="block hover:text-red-200 transition py-2">About</a>
+            <a href="quiz.html" class="block hover:text-red-200 transition py-2">Quiz</a>
+            <a href="index.html#menu" class="block hover:text-red-200 transition py-2">Menu</a>
+            <a href="index.html#services" class="block hover:text-red-200 transition py-2">Services</a>
+            <a href="index.html#contact" class="block hover:text-red-200 transition py-2">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Quiz Section -->
+    <section class="py-20 px-6 hero-gradient">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-red-600 mb-4 text-center">Which Ms. Fizzy's Drink Are You?</h2>
+            <p class="text-center text-gray-600 mb-10">Answer 4 quick questions to find your perfect drink!</p>
+
+            <div id="quiz-container" class="bg-white rounded-2xl shadow-xl p-8">
+
+                <!-- Question 1 -->
+                <div class="quiz-question" id="q1">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">1. What's your vibe?</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="answer(1,'fruity')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">🍓 Fruity</button>
+                        <button onclick="answer(1,'classic')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">⭐ Classic</button>
+                        <button onclick="answer(1,'creamy')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">🍦 Sweet & Creamy</button>
+                        <button onclick="answer(1,'refreshing')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">💧 Refreshing</button>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question hidden" id="q2">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">2. What's your favorite season?</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="answer(2,'summer')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">☀️ Summer</button>
+                        <button onclick="answer(2,'fall')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">🍂 Fall</button>
+                        <button onclick="answer(2,'winter')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">❄️ Winter</button>
+                        <button onclick="answer(2,'spring')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">🌸 Spring</button>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question hidden" id="q3">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">3. How do you take your drinks?</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="answer(3,'bubbly')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">🫧 Light & Bubbly</button>
+                        <button onclick="answer(3,'rich')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">☕ Rich & Creamy</button>
+                        <button onclick="answer(3,'bold')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">🍒 Bold & Fruity</button>
+                        <button onclick="answer(3,'simple')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">✨ Simple & Clean</button>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="quiz-question hidden" id="q4">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">4. What's your energy level today?</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="answer(4,'boost')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">⚡ Need a Boost</button>
+                        <button onclick="answer(4,'chill')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">😌 Chill & Relaxed</button>
+                        <button onclick="answer(4,'playful')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">🎉 Fun & Playful</button>
+                        <button onclick="answer(4,'healthy')" class="bg-pink-100 hover:bg-pink-200 text-gray-800 font-semibold py-4 px-6 rounded-xl transition">💚 Healthy & Refreshed</button>
+                    </div>
+                </div>
+
+                <!-- Result -->
+                <div class="hidden" id="quiz-result">
+                    <div class="text-center">
+                        <p class="text-xl text-gray-600 mb-2">Your perfect Ms. Fizzy's drink is...</p>
+                        <h3 id="result-drink" class="text-3xl font-bold text-red-600 mb-4"></h3>
+                        <p id="result-description" class="text-gray-700 mb-8"></p>
+                        <a href="index.html#menu" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition mr-4">See Our Menu</a>
+                        <button onclick="resetQuiz()" class="bg-pink-200 hover:bg-pink-300 text-gray-800 font-bold py-3 px-8 rounded-full transition">Take it Again!</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-red-600 text-white py-8 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <p>&copy; 2026 Ms. Fizzy's Dirty Sodas</p>
+            <p class="mt-2 text-sm">Woman-owned • Marin County, CA</p>
+        </div>
+    </footer>
+
+    <script>
+        let answers = {};
+
+        function answer(question, value) {
+            answers[question] = value;
+            if (question < 4) {
+                document.getElementById('q' + question).classList.add('hidden');
+                document.getElementById('q' + (question + 1)).classList.remove('hidden');
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById('q4').classList.add('hidden');
+            document.getElementById('quiz-result').classList.remove('hidden');
+
+            let drink = '';
+            let description = '';
+
+            if (answers[4] === 'boost' || answers[3] === 'rich') {
+                if (answers[1] === 'creamy') {
+                    drink = '☕ ChocoVanilla Iced Coffee';
+                    description = 'Rich, chocolatey and indulgent — you need something bold to match your energy!';
+                } else {
+                    drink = '☕ Caramel Iced Coffee';
+                    description = 'Sweet, smooth and energizing — the perfect pick-me-up for your day!';
+                }
+            } else if (answers[4] === 'healthy' || answers[1] === 'refreshing') {
+                drink = '💧 H2O FIZZ';
+                description = 'Light, bubbly and refreshing — you keep it clean and love a little fizz!';
+            } else if (answers[1] === 'fruity' || answers[3] === 'bold') {
+                if (answers[2] === 'summer' || answers[2] === 'spring') {
+                    drink = '🍓 The Shirley FIZZ';
+                    description = 'Sweet, fruity and fun — you are the life of the party!';
+                } else if (answers[3] === 'bold') {
+                    drink = '🍒 Cherry Coke FIZZ';
+                    description = 'Bold and cherry-sweet — you have great taste and love a classic with a twist!';
+                } else {
+                    drink = '🍊 Orange FIZZ-Sicle';
+                    description = 'Bright, citrusy and fun — you bring sunshine wherever you go!';
+                }
+            } else if (answers[1] === 'classic' || answers[2] === 'fall' || answers[2] === 'winter') {
+                if (answers[3] === 'bubbly') {
+                    drink = '🥤 Root Beer FIZZ';
+                    description = 'Classic and comforting — you know what you like and you love it!';
+                } else {
+                    drink = '🥤 Classic FIZZ';
+                    description = 'Cool, creamy and timeless — you are a classic through and through!';
+                }
+            } else {
+                drink = '🍓 The DR. FIZZ';
+                description = 'Sweet strawberry goodness — you love a treat that feels special!';
+            }
+
+            document.getElementById('result-drink').textContent = drink;
+            document.getElementById('result-description').textContent = description;
+        }
+
+        function resetQuiz() {
+            answers = {};
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('q1').classList.remove('hidden');
+            for (let i = 2; i <= 4; i++) {
+                document.getElementById('q' + i).classList.add('hidden');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            menu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>
