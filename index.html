@@ -4,8 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ms. Fizzy's | Marin County's First Dirty Soda Company</title>
+    <link rel="canonical" href="https://msfizzys.com/">
     <link rel="icon" type="image/png" href="logo.png">
-    <meta name="description" content="Ms. Fizzy's Dirty Sodas - Marin County's first dirty soda company. Mobile pop-up cart for birthdays, weddings, and events. Delicious sweet treats for the whole family!">
+    <meta name="description" content="Ms. Fizzy's Dirty Sodas — Marin County's first dirty soda company. Mobile pop-up cart for birthdays, weddings, and events. Book us for your next event!">
+    <meta name="keywords" content="dirty soda Marin County, dirty soda North Bay, mobile beverage cart Marin, soda bar event catering, Ms Fizzys, party drinks Marin County">
+    <meta property="og:title" content="Ms. Fizzy's | Marin County's First Dirty Soda Company">
+    <meta property="og:description" content="Mobile dirty soda cart for birthdays, weddings, corporate events & more. Serving Marin County and the North Bay Area.">
+    <meta property="og:image" content="https://msfizzys.com/logo.png">
+    <meta property="og:url" content="https://msfizzys.com/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FoodEstablishment",
+      "name": "Ms. Fizzy's Dirty Sodas",
+      "description": "Marin County's first dirty soda company. Mobile pop-up beverage cart for birthdays, weddings, corporate events, and more.",
+      "url": "https://msfizzys.com",
+      "logo": "https://msfizzys.com/logo.png",
+      "email": "msfizzysdrinks@gmail.com",
+      "areaServed": ["Marin County", "North Bay Area", "California"],
+      "servesCuisine": "Beverages",
+      "priceRange": "$",
+      "sameAs": ["https://www.instagram.com/ms.fizzys"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      }
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html {
@@ -74,14 +102,13 @@
 <div class="bubble"></div>
     <!-- Navigation -->
     <nav class="bg-red-600 text-white py-4 px-6 sticky top-0 z-50 shadow-lg">
-        <div class="flex items-center space-x-3">
+        <div class="flex items-center justify-between">
             <a href="#home" class="flex items-center space-x-3">
-                <img src="logo.png" alt="Ms. Fizzy's Logo" class="h-12 object-contain">
-                <h1 class="text-2xl md:text-3xl font-bold">Ms. Fizzy's</h1>
+                <img src="logo.png" alt="Ms. Fizzy's Dirty Sodas Logo" width="48" height="48" class="h-12 object-contain">
+                <span class="text-2xl md:text-3xl font-bold">Ms. Fizzy's</span>
                 <span class="hidden md:inline text-sm">Dirty Sodas</span>
             </a>
-        </div>
-            
+
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#home" class="hover:text-red-200 transition">Home</a>
@@ -107,9 +134,10 @@
 
             <!-- Mobile Menu Button -->
             <button 
-                class="md:hidden"
+                class="md:hidden p-2"
                 onclick="toggleMobileMenu()"
                 id="mobile-menu-button"
+                aria-label="Toggle navigation menu"
             >
                 <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -124,18 +152,18 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
-            <a href="#home" class="block hover:text-red-200 transition" onclick="closeMobileMenu()">Home</a>
-            <a href="#about" class="block hover:text-red-200 transition py-4" onclick="closeMobileMenu()">About</a>
-            <a href="quiz.html" class="hover:text-red-200 transition py-4">Quiz</a>
-            <a href="#menu" class="block hover:text-red-200 transition" onclick="closeMobileMenu()">Menu</a>
-            <a href="#services" class="block hover:text-red-200 transition" onclick="closeMobileMenu()">Services</a>
-            <a href="#contact" class="block hover:text-red-200 transition" onclick="closeMobileMenu()">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-1">
+            <a href="#home" class="block hover:text-red-200 transition py-3 border-b border-red-500" onclick="toggleMobileMenu()">Home</a>
+            <a href="#about" class="block hover:text-red-200 transition py-3 border-b border-red-500" onclick="toggleMobileMenu()">About</a>
+            <a href="quiz.html" class="block hover:text-red-200 transition py-3 border-b border-red-500">Quiz</a>
+            <a href="#menu" class="block hover:text-red-200 transition py-3 border-b border-red-500" onclick="toggleMobileMenu()">Menu</a>
+            <a href="#services" class="block hover:text-red-200 transition py-3 border-b border-red-500" onclick="toggleMobileMenu()">Services</a>
+            <a href="#contact" class="block hover:text-red-200 transition py-3 border-b border-red-500" onclick="toggleMobileMenu()">Contact</a>
             <a 
                 href="https://www.instagram.com/ms.fizzys?igsh=MzRlODBiNWFlZA=="
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center space-x-2 hover:text-red-200 transition"
+                class="flex items-center space-x-2 hover:text-red-200 transition py-3"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -152,7 +180,8 @@
         <div class="max-w-6xl mx-auto text-center">
             <img 
                 src="logo.png" 
-                alt="Ms. Fizzy's Logo" 
+                alt="Ms. Fizzy's Dirty Sodas - Marin County's First Dirty Soda Company" 
+                width="256" height="256"
                 class="w-64 h-64 mx-auto mb-8 object-contain"
             />
             <p class="text-xl md:text-2xl text-gray-600 mb-8">Marin County's 1st Dirty Soda Company</p>
@@ -171,7 +200,7 @@
             <h2 class="text-4xl md:text-5xl font-bold text-red-600 mb-8 text-center">About Ms. Fizzy's</h2>
             <div class="bg-red-50 rounded-2xl p-8 md:p-12">
                 <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-                    Make your party POPPIN'! Ms. Fizzy's is a mobile beverage cart & catering company in Marin County and the North Bay Area. We're mixing up fun sodas, iced coffees, and more! Never heard of a DIRTY SODA? It's soda with cream and fun flavors! Availabale for your next event - birthday party - wedding - corporate gathering - school fundrasier! Ms. Fizzy's is for the whole family - dirty sodas will soon be your new favorite sweet treat! Contact us for your next event!
+                    Make your party POPPIN'! Ms. Fizzy's is a mobile beverage cart &amp; catering company in Marin County and the North Bay Area. We're mixing up fun sodas, iced coffees, and more! Never heard of a DIRTY SODA? It's soda with cream and fun flavors! Available for your next event - birthday party - wedding - corporate gathering - school fundraiser! Ms. Fizzy's is for the whole family - dirty sodas will soon be your new favorite sweet treat! Contact us for your next event!
                 </p>
                 <p class="text-2xl md:text-3xl font-bold text-red-600 text-center mt-6">
                     DIRTY SODAS<br>
@@ -199,7 +228,7 @@
                 <div style="height: 300px; overflow: hidden;" class="bg-gray-100 rounded-t-2xl">                        
                         <img 
                             src="dr-fizz.png" 
-                            alt="DR. Fizz" 
+                            alt="DR. Fizz - Dr Pepper dirty soda with strawberry cream" width="400" height="300" 
                             class="w-full h-full" style="object-fit: cover;"                        
                         />
                     </div>
@@ -233,7 +262,7 @@
                     <div style="height: 300px; overflow: hidden;" class="bg-gray-100 rounded-t-2xl">
                         <img 
                             src="classic-fizz.png" 
-                            alt="Classic Fizz" 
+                            alt="Classic Fizz dirty soda with coconut cream" width="400" height="300" 
                             class="w-full h-full" style="object-fit: cover;"                        
                         />
                     </div>
@@ -250,7 +279,7 @@
                         <div style="height: 300px; overflow: hidden;" class="bg-gray-100 rounded-t-2xl">
                             <img 
                                 src="orange-fizzsicle.png" 
-                                alt="Orange FIZZ-Sicle" 
+                                alt="Orange FIZZ-Sicle dirty soda" width="400" height="300" 
                                 class="w-full h-full" style="object-fit: cover;"
                             />
                         </div>
@@ -267,7 +296,7 @@
                         <div style="height: 300px; overflow: hidden;" class="bg-gray-100 rounded-t-2xl">
                             <img 
                                 src="root-beer-fizz.png" 
-                                alt="Root Beer FIZZ" 
+                                alt="Root Beer FIZZ dirty soda with vanilla cream" width="400" height="300" 
                                 class="w-full h-full" style="object-fit: cover;"
                             />
                         </div>
@@ -284,7 +313,7 @@
                         <div style="height: 300px; overflow: hidden;" class="bg-gray-100 rounded-t-2xl">
                             <img
                                 src="cherry-coke-fizz.png" 
-                                alt="Cherry Coke FIZZ" 
+                                alt="Cherry Coke FIZZ dirty soda" width="400" height="300" 
                                 class="w-full h-full" style="object-fit: cover;" 
                             />
                         </div>
@@ -301,7 +330,7 @@
                         <div style="height: 300px; overflow: hidden;" class="bg-gray-100 rounded-t-2xl">
                             <img
                                 src="caramel-iced-coffee.png"
-                                alt="Caramel Iced Coffee"
+                                alt="Caramel Iced Coffee with cold brew" width="400" height="300"
                                 class="w-full h-full" style="object-fit: cover;" 
                             />
                         </div>
@@ -318,7 +347,7 @@
                         <div style="height: 300px; overflow: hidden;" class="bg-gray-100 rounded-t-2xl">
                             <img
                                 src="chocovanilla-iced-coffee.png"
-                                alt="ChocoVanilla Iced Coffee"
+                                alt="ChocoVanilla Iced Coffee with cold brew" width="400" height="300"
                                 class="w-full h-full" style="object-fit: cover;"
                             />
                         </div>
