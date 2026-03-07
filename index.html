@@ -243,21 +243,8 @@
             letter-spacing: 0.22em; text-transform: uppercase;
             padding: 0.28rem 0.85rem; border-radius: 999px;
         }
-        .hero-logo {
-            width: 300px; height: 300px;
-            object-fit: contain;
-            margin: 0 auto 1.5rem; display: block;
-        }
-        .hero-brand {
-            font-family: 'Pacifico', cursive;
-            font-size: 3rem; color: var(--gold); line-height: 1;
-            margin-bottom: 0.4rem;
-        }
-        .hero-sub {
-            font-size: 0.72rem; font-weight: 800;
-            letter-spacing: 0.32em; text-transform: uppercase;
-            color: var(--brown-dark); margin-bottom: 0.6rem;
-        }
+        .hero-brand { font-family: 'Pacifico', cursive; font-size: 3rem; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
+        .hero-sub { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.32em; text-transform: uppercase; color: var(--brown-dark); margin-bottom: 0.6rem; }
         .hero-tagline {
             font-size: 0.85rem; color: var(--brown-mid);
             margin-bottom: 2rem; font-weight: 500;
@@ -265,6 +252,8 @@
         .hero-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
 
         /* ABOUT */
+        .about-heading { font-family: 'Pacifico', cursive; font-size: 3.2rem; color: var(--brown-dark); margin-bottom: 1.75rem; }
+        @media (max-width: 580px) { .about-heading { font-size: 2.4rem; } }
         .about {
             background: var(--cream);
             border-top: 3px solid var(--gold);
@@ -373,42 +362,40 @@
 
         /* SERVICES */
         .services {
-            background: var(--brown-dark);
-            padding: 5rem 1.5rem; position: relative;
+            background: var(--cream);
+            border-top: 3px solid var(--gold);
+            border-bottom: 3px solid var(--gold);
+            padding: 5rem 1.5rem;
         }
-        .services::before {
-            content: ''; position: absolute;
-            top: 0; left: 0; right: 0; height: 4px;
-            background: linear-gradient(90deg, var(--gold), var(--coral), var(--gold));
-        }
-        .services .section-header h2 { color: var(--gold); }
-        .services .section-header p { color: var(--cream-dark); opacity: 0.55; }
+        .services .section-header h2 { color: var(--brown-dark); }
+        .services .section-header p { color: var(--gold); }
         .services-inner { max-width: 880px; margin: 0 auto; }
         .services-card {
-            background: rgba(255,255,255,0.04);
-            border: 1.5px solid rgba(200,146,42,0.28);
+            background: var(--cream);
+            border: 2.5px solid var(--gold);
             border-radius: 20px; padding: 2.5rem; text-align: center;
+            box-shadow: 0 4px 20px rgba(44,26,14,0.07);
         }
         .services-card h3 {
             font-family: 'Pacifico', cursive;
-            font-size: 1.8rem; color: var(--cream); margin-bottom: 0.75rem;
+            font-size: 1.8rem; color: var(--brown-dark); margin-bottom: 0.75rem;
         }
-        .services-card > p { font-size: 0.88rem; color: var(--cream-dark); opacity: 0.65; margin-bottom: 2rem; }
+        .services-card > p { font-size: 0.88rem; color: var(--brown-mid); margin-bottom: 2rem; }
         .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2.5rem; }
         @media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
         .services-box {
-            background: rgba(255,255,255,0.05);
-            border: 1.5px solid rgba(200,146,42,0.18);
+            background: var(--cream-dark);
+            border: 1.5px solid var(--gold);
             border-radius: 14px; padding: 1.4rem; text-align: left;
         }
         .services-box h4 {
             font-size: 0.65rem; font-weight: 800;
             letter-spacing: 0.22em; text-transform: uppercase;
-            color: var(--gold); margin-bottom: 1rem;
+            color: var(--brown-dark); margin-bottom: 1rem;
         }
         .services-box ul { list-style: none; }
         .services-box li {
-            font-size: 0.82rem; color: var(--cream-dark);
+            font-size: 0.82rem; color: var(--brown-mid);
             padding: 0.32rem 0;
             display: flex; align-items: center; gap: 0.5rem;
         }
@@ -449,7 +436,6 @@
         .footer-copy { font-size: 0.67rem; color: var(--cream-dark); opacity: 0.3; border-top: 1px solid rgba(200,146,42,0.15); padding-top: 1rem; width: 100%; }
 
         @media (max-width: 580px) {
-            .hero-brand { font-size: 2.4rem; }
             .hero-card { padding: 2rem 1.5rem; }
             .about h2, .section-header h2 { font-size: 2rem; }
         }
@@ -510,7 +496,6 @@
 <!-- HERO -->
 <section id="home" class="hero">
     <div class="hero-card">
-        <img src="logo.png" alt="Ms. Fizzy's — Marin County's First Dirty Soda Company" width="150" height="150" class="hero-logo">
         <div class="hero-brand">Ms. Fizzy's</div>
         <div class="hero-sub">Dirty Sodas</div>
         <p class="hero-tagline">Marin County's 1st Dirty Soda Company</p>
@@ -524,8 +509,7 @@
 <!-- ABOUT -->
 <section id="about" class="about">
     <div class="about-inner">
-        <span class="section-tag">Our Story</span>
-        <h2>About Ms. Fizzy's</h2>
+        <h2 class="about-heading">Ms. Fizzy's Story</h2>
         <div class="about-body">
             <p>Make your party POPPIN'! Ms. Fizzy's is a mobile beverage cart &amp; catering company in Marin County and the North Bay Area. We're mixing up fun sodas, iced coffees, and more! Never heard of a DIRTY SODA? It's soda with cream and fun flavors!</p>
             <p>Available for your next event — birthday party, wedding, corporate gathering, school fundraiser! Ms. Fizzy's is for the whole family. Dirty sodas will soon be your new favorite sweet treat!</p>
@@ -604,7 +588,6 @@
     <div class="services-inner">
         <div class="services-card">
             <h3>Mobile Pop-Up Cart</h3>
-            <p>Ms. Fizzy's has no permanent location. Find us at pop-ups or hire us for your next private event!</p>
             <div class="services-grid">
                 <div class="services-box">
                     <h4>Perfect For</h4>
