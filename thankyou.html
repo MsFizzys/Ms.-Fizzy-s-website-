@@ -3,36 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - Ms. Fizzy's</title>
+    <title>Thank You! | Ms. Fizzy's Dirty Sodas</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/png" href="logo.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FDF6E3;
+            --cream-dark: #F5EAC8;
+            --gold: #C8922A;
+            --brown-dark: #2C1A0E;
+            --brown-mid: #3D2010;
+            --coral: #D4583A;
+            --coral-light: #E8795E;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--cream); font-family: 'Montserrat', sans-serif; color: var(--brown-dark); min-height: 100vh; display: flex; flex-direction: column; }
+
+        /* NAV */
+        nav { background-color: var(--brown-dark); border-bottom: 3px solid var(--gold); padding: 0 1.5rem; }
+        .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; height: 70px; }
+        .nav-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .nav-brand img { height: 48px; width: 48px; object-fit: contain; }
+        .nav-brand-name { font-family: 'Pacifico', cursive; font-size: 1.35rem; color: var(--gold); }
+
+        /* MAIN */
+        main {
+            flex: 1;
+            display: flex; align-items: center; justify-content: center;
+            padding: 4rem 1.5rem;
+        }
+        .thankyou-card {
+            max-width: 520px; width: 100%;
+            background: var(--cream);
+            border: 2.5px solid var(--gold);
+            border-radius: 28px;
+            padding: 3.5rem 3rem;
+            text-align: center;
+            box-shadow: 0 8px 40px rgba(44,26,14,0.1);
+            position: relative;
+        }
+        .thankyou-card::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(200,146,42,0.08) 0%, transparent 70%);
+            border-radius: 26px;
+            pointer-events: none;
+        }
+        .thankyou-icon {
+            font-size: 3.5rem; margin-bottom: 1.25rem; display: block;
+        }
+        .thankyou-card h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.8rem; color: var(--brown-dark);
+            margin-bottom: 1rem;
+        }
+        .thankyou-card p {
+            font-size: 0.9rem; color: var(--brown-mid);
+            line-height: 1.7; margin-bottom: 0.5rem;
+        }
+        .thankyou-card p:last-of-type { margin-bottom: 2rem; }
+        .divider {
+            width: 60px; height: 3px;
+            background: var(--gold); border-radius: 2px;
+            margin: 1.5rem auto;
+        }
+        .btn-primary {
+            display: inline-block; background: var(--coral); color: var(--cream);
+            font-size: 0.73rem; font-weight: 800; letter-spacing: 0.15em;
+            text-transform: uppercase; padding: 0.9rem 2.2rem;
+            border-radius: 999px; text-decoration: none;
+            border: 2px solid var(--coral-light);
+            transition: all 0.2s;
+            box-shadow: 0 4px 16px rgba(212,88,58,0.28);
+        }
+        .btn-primary:hover { background: var(--coral-light); color: var(--brown-dark); transform: translateY(-2px); }
+
+        /* FOOTER */
+        footer { background: var(--brown-dark); border-top: 3px solid var(--gold); padding: 2rem 1.5rem; }
+        .footer-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+        .footer-brand { font-family: 'Pacifico', cursive; font-size: 1.3rem; color: var(--gold); margin-bottom: 0.4rem; }
+        .footer-copy { font-size: 0.65rem; color: var(--cream-dark); opacity: 0.3; }
+
+        @media (max-width: 520px) {
+            .thankyou-card { padding: 2.5rem 1.5rem; }
+            .thankyou-card h1 { font-size: 2.2rem; }
+        }
+    </style>
 </head>
-<body class="min-h-screen bg-white">
+<body>
 
-    <nav class="bg-red-600 text-white py-4 px-6 sticky top-0 z-50 shadow-lg">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="index.html">
-                <img src="logo.png" alt="Ms. Fizzy's Dirty Sodas Logo" width="48" height="48" class="h-12 object-contain">
-            </a>
-        </div>
-    </nav>
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">
+            <img src="logo.png" alt="Ms. Fizzy's Dirty Sodas Logo" width="48" height="48">
+            <span class="nav-brand-name">Ms. Fizzy's</span>
+        </a>
+    </div>
+</nav>
 
-    <section class="py-20 px-6 text-center">
-        <div class="max-w-xl mx-auto">
-            <h1 class="text-5xl font-bold text-red-600 mb-6">Thank You! 🥤</h1>
-            <p class="text-xl text-gray-600 mb-4">Your event request has been submitted successfully!</p>
-            <p class="text-gray-500 mb-10">We will be in touch with you soon to confirm your booking.</p>
-            <a href="index.html" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full text-lg transition">Back to Ms. Fizzy's</a>
-        </div>
-    </section>
+<!-- MAIN -->
+<main>
+    <div class="thankyou-card">
+        <span class="thankyou-icon">🥤</span>
+        <h1>Thank You!</h1>
+        <div class="divider"></div>
+        <p>Your event request has been submitted successfully!</p>
+        <p>We'll be in touch with you soon to confirm your booking.</p>
+        <a href="index.html" class="btn-primary">Back to Ms. Fizzy's</a>
+    </div>
+</main>
 
-    <footer class="bg-red-600 text-white py-8 px-6 mt-20">
-        <div class="max-w-6xl mx-auto text-center">
-            <p>&copy; 2026 Ms. Fizzy's Dirty Sodas</p>
-            <p class="mt-2 text-sm">Woman-owned • Marin County, CA</p>
-        </div>
-    </footer>
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">Ms. Fizzy's Dirty Sodas</div>
+        <div class="footer-copy">&copy; 2026 Ms. Fizzy's Dirty Sodas. All rights reserved. · Woman-owned · Marin County, CA</div>
+    </div>
+</footer>
 
 </body>
 </html>
