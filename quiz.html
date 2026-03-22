@@ -50,7 +50,7 @@
         .mobile-menu a { display: block; padding: 0.85rem 0; border-bottom: 1px solid rgba(200,146,42,0.15); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream-dark); text-decoration: none; transition: color 0.2s; }
         .mobile-menu a:last-child { border-bottom: none; }
         .mobile-menu a:hover { color: var(--gold); }
-        @media (max-width: 860px) { .nav-links { display: none; } .hamburger { display: flex; } }
+        @media (max-width: 860px) { .nav-links { display: none; } .hamburger { display: flex; } .nav-brand-sub { display: none; } }
 
         /* PAGE HEADER */
         .page-header {
@@ -74,13 +74,13 @@
             padding: 0.3rem 0.9rem; border-radius: 999px;
             border: 1.5px solid var(--coral); margin-bottom: 1.25rem;
         }
-        .page-header h1 { font-family: 'Pacifico', cursive; font-size: 2.8rem; color: var(--brown-dark); margin-bottom: 0.75rem; }
+        .page-header h1 { font-family: 'Pacifico', cursive; font-size: 2.8rem; color: var(--coral); margin-bottom: 0.75rem; }
         .page-header p { font-size: 0.9rem; color: var(--brown-mid); }
 
         /* QUIZ */
         .quiz-section { padding: 4rem 1.5rem 5rem; }
         .quiz-card {
-            max-width: 620px; margin: 0 auto;
+            max-width: 640px; margin: 0 auto;
             background: var(--cream);
             border: 2.5px solid var(--gold);
             border-radius: 24px;
@@ -94,25 +94,21 @@
         .quiz-question h3 {
             font-family: 'Pacifico', cursive;
             font-size: 1.5rem; color: var(--coral);
-            margin-bottom: 1.5rem; text-align: center;
+            margin-bottom: 0.5rem; text-align: center;
+        }
+        .quiz-question .q-sub {
+            font-size: 0.78rem; color: var(--brown-mid);
+            text-align: center; margin-bottom: 1.75rem;
+            font-style: italic;
         }
 
         /* Progress */
-        .quiz-progress {
-            display: flex; justify-content: center; gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
-        .progress-dot {
-            width: 10px; height: 10px; border-radius: 50%;
-            background: var(--cream-dark); border: 2px solid var(--gold);
-            transition: background 0.3s;
-        }
+        .quiz-progress { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2rem; }
+        .progress-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--cream-dark); border: 2px solid var(--gold); transition: background 0.3s; }
         .progress-dot.active { background: var(--gold); }
         .progress-dot.done { background: var(--coral); border-color: var(--coral); }
 
-        .quiz-options {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;
-        }
+        .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
         @media (max-width: 460px) { .quiz-options { grid-template-columns: 1fr; } }
 
         .quiz-btn {
@@ -121,62 +117,25 @@
             border-radius: 14px;
             padding: 1rem 1.25rem;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem; font-weight: 700;
+            font-size: 0.82rem; font-weight: 700;
             color: var(--brown-dark);
             cursor: pointer; text-align: center;
-            transition: all 0.2s;
+            transition: all 0.2s; line-height: 1.4;
         }
-        .quiz-btn:hover {
-            border-color: var(--gold);
-            background: var(--cream-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 14px rgba(44,26,14,0.1);
-        }
+        .quiz-btn:hover { border-color: var(--gold); background: var(--cream-dark); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(44,26,14,0.1); }
 
         /* Result */
         #quiz-result { display: none; text-align: center; }
-        #quiz-result.active { display: block; }
-        .result-label {
-            font-size: 0.65rem; font-weight: 800;
-            letter-spacing: 0.25em; text-transform: uppercase;
-            color: var(--brown-mid); margin-bottom: 0.5rem;
-        }
-        .result-drink {
-            font-family: 'Pacifico', cursive;
-            font-size: 2rem; color: var(--coral);
-            margin-bottom: 1rem;
-        }
-        .result-desc {
-            font-size: 0.9rem; color: var(--brown-mid);
-            line-height: 1.7; margin-bottom: 2rem;
-        }
-        .result-divider {
-            width: 60px; height: 3px;
-            background: var(--gold);
-            border-radius: 2px;
-            margin: 1.5rem auto;
-        }
+        .result-label { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--brown-mid); margin-bottom: 0.5rem; }
+        .result-drink { font-family: 'Pacifico', cursive; font-size: 2rem; color: var(--coral); margin-bottom: 0.25rem; }
+        .result-tagline { font-family: 'Pacifico', cursive; font-size: 1rem; color: var(--gold); margin-bottom: 1rem; }
+        .result-divider { width: 60px; height: 3px; background: var(--gold); border-radius: 2px; margin: 1.25rem auto; }
+        .result-desc { font-size: 0.88rem; color: var(--brown-mid); line-height: 1.8; margin-bottom: 2rem; }
         .result-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
 
-        .btn-primary {
-            display: inline-block; background: var(--coral); color: var(--cream);
-            font-size: 0.73rem; font-weight: 800; letter-spacing: 0.15em;
-            text-transform: uppercase; padding: 0.85rem 2rem;
-            border-radius: 999px; text-decoration: none;
-            border: 2px solid var(--coral-light);
-            transition: all 0.2s;
-            box-shadow: 0 4px 16px rgba(212,88,58,0.28);
-            cursor: pointer; font-family: 'Montserrat', sans-serif;
-        }
+        .btn-primary { display: inline-block; background: var(--coral); color: var(--cream); font-size: 0.73rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 999px; text-decoration: none; border: 2px solid var(--coral-light); transition: all 0.2s; box-shadow: 0 4px 16px rgba(212,88,58,0.28); cursor: pointer; font-family: 'Montserrat', sans-serif; }
         .btn-primary:hover { background: var(--coral-light); color: var(--brown-dark); transform: translateY(-2px); }
-        .btn-outline {
-            display: inline-block; background: transparent; color: var(--brown-dark);
-            font-size: 0.73rem; font-weight: 800; letter-spacing: 0.15em;
-            text-transform: uppercase; padding: 0.85rem 2rem;
-            border-radius: 999px; text-decoration: none;
-            border: 2px solid var(--gold); transition: all 0.2s;
-            cursor: pointer; font-family: 'Montserrat', sans-serif;
-        }
+        .btn-outline { display: inline-block; background: transparent; color: var(--brown-dark); font-size: 0.73rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 999px; text-decoration: none; border: 2px solid var(--gold); transition: all 0.2s; cursor: pointer; font-family: 'Montserrat', sans-serif; }
         .btn-outline:hover { background: var(--gold); color: var(--cream); transform: translateY(-2px); }
 
         /* FOOTER */
@@ -240,7 +199,7 @@
 <div class="page-header">
     <span class="section-tag">Find Your Fizz</span>
     <h1>Which Drink Are You?</h1>
-    <p>Answer 4 quick questions to find your perfect Ms. Fizzy's drink!</p>
+    <p>4 questions. One perfect fizz. Let's find out.</p>
 </div>
 
 <!-- QUIZ -->
@@ -254,49 +213,59 @@
             <div class="progress-dot" id="dot-4"></div>
         </div>
 
+        <!-- Q1 -->
         <div class="quiz-question active" id="q1">
-            <h3>1. What's your vibe?</h3>
+            <h3>Your friends would describe you as...</h3>
+            <p class="q-sub">Be honest. They're not here.</p>
             <div class="quiz-options">
-                <button class="quiz-btn" onclick="answer(1,'fruity')">🍓 Fruity</button>
-                <button class="quiz-btn" onclick="answer(1,'classic')">⭐ Classic</button>
-                <button class="quiz-btn" onclick="answer(1,'creamy')">🍦 Sweet &amp; Creamy</button>
-                <button class="quiz-btn" onclick="answer(1,'refreshing')">💧 Refreshing</button>
+                <button class="quiz-btn" onclick="answer(1,'sophisticated')">🎓 The smart one who always orders dessert</button>
+                <button class="quiz-btn" onclick="answer(1,'classic')">⭐ Reliable, real, and always on time</button>
+                <button class="quiz-btn" onclick="answer(1,'wild')">🎉 The one who makes it a night</button>
+                <button class="quiz-btn" onclick="answer(1,'sunshine')">☀️ Bright, loud, and impossible not to love</button>
             </div>
         </div>
 
+        <!-- Q2 -->
         <div class="quiz-question" id="q2">
-            <h3>2. Favorite season?</h3>
+            <h3>Pick your ideal Saturday</h3>
+            <p class="q-sub">No wrong answers. Well, maybe one.</p>
             <div class="quiz-options">
-                <button class="quiz-btn" onclick="answer(2,'summer')">☀️ Summer</button>
-                <button class="quiz-btn" onclick="answer(2,'fall')">🍂 Fall</button>
-                <button class="quiz-btn" onclick="answer(2,'winter')">❄️ Winter</button>
-                <button class="quiz-btn" onclick="answer(2,'spring')">🌸 Spring</button>
+                <button class="quiz-btn" onclick="answer(2,'porch')">🪑 Front porch, good stories, nowhere to be</button>
+                <button class="quiz-btn" onclick="answer(2,'pool')">🏊 First one in the pool, last one out</button>
+                <button class="quiz-btn" onclick="answer(2,'brunch')">🥂 Brunch that turns into dinner somehow</button>
+                <button class="quiz-btn" onclick="answer(2,'kids')">🎠 Kids' menu, no apologies, extra cherry</button>
             </div>
         </div>
 
+        <!-- Q3 -->
         <div class="quiz-question" id="q3">
-            <h3>3. How do you take your drinks?</h3>
+            <h3>When you walk into a room...</h3>
+            <p class="q-sub">You already know the answer.</p>
             <div class="quiz-options">
-                <button class="quiz-btn" onclick="answer(3,'bubbly')">🫧 Light &amp; Bubbly</button>
-                <button class="quiz-btn" onclick="answer(3,'rich')">☕ Rich &amp; Creamy</button>
-                <button class="quiz-btn" onclick="answer(3,'bold')">🍒 Bold &amp; Fruity</button>
-                <button class="quiz-btn" onclick="answer(3,'simple')">✨ Simple &amp; Clean</button>
+                <button class="quiz-btn" onclick="answer(3,'shift')">💥 The whole vibe shifts — louder, better</button>
+                <button class="quiz-btn" onclick="answer(3,'steady')">🤝 People relax — you've got it handled</button>
+                <button class="quiz-btn" onclick="answer(3,'glow')">✨ You glow. It's just what you do.</button>
+                <button class="quiz-btn" onclick="answer(3,'laugh')">😂 Someone's already laughing before you say a word</button>
             </div>
         </div>
 
+        <!-- Q4 -->
         <div class="quiz-question" id="q4">
-            <h3>4. Your energy level today?</h3>
+            <h3>What do you order at a restaurant?</h3>
+            <p class="q-sub">Every time, without even looking at the menu.</p>
             <div class="quiz-options">
-                <button class="quiz-btn" onclick="answer(4,'boost')">⚡ Need a Boost</button>
-                <button class="quiz-btn" onclick="answer(4,'chill')">😌 Chill &amp; Relaxed</button>
-                <button class="quiz-btn" onclick="answer(4,'playful')">🎉 Fun &amp; Playful</button>
-                <button class="quiz-btn" onclick="answer(4,'healthy')">💚 Healthy &amp; Fresh</button>
+                <button class="quiz-btn" onclick="answer(4,'dessert')">🍰 Whatever sounds most interesting — and dessert</button>
+                <button class="quiz-btn" onclick="answer(4,'usual')">🤌 My usual. It's perfect. Why change it?</button>
+                <button class="quiz-btn" onclick="answer(4,'special')">🌟 The special — if they made it today, I want it</button>
+                <button class="quiz-btn" onclick="answer(4,'fun')">🍟 Something fun. Maybe two things. Life is short.</button>
             </div>
         </div>
 
+        <!-- RESULT -->
         <div id="quiz-result">
-            <p class="result-label">Your perfect Ms. Fizzy's drink is...</p>
+            <p class="result-label">You are definitely...</p>
             <div class="result-drink" id="result-drink"></div>
+            <div class="result-tagline" id="result-tagline"></div>
             <div class="result-divider"></div>
             <p class="result-desc" id="result-description"></p>
             <div class="result-btns">
@@ -321,6 +290,39 @@
 <script>
     let answers = {};
 
+    const results = {
+        dr_fizz: {
+            drink: '🍓 The DR. Fizz',
+            tagline: '"Certified delicious."',
+            description: "She's got a PhD in flavor and a wink she can't quite hide. Sophisticated enough for the boardroom, but she'll always order dessert."
+        },
+        classic_fizz: {
+            drink: '🥤 The Classic Fizz',
+            tagline: '"Some things are classic for a reason."',
+            description: "No gimmicks, no games — just the real thing, every single time. She's the friend who shows up early and stays till the end."
+        },
+        orange_fizzsicle: {
+            drink: '🍊 The Orange Fizz-Sicle',
+            tagline: '"Squeeze the day."',
+            description: "She's the first one in the pool and the last one to stop laughing. Bright, bold, and absolutely unapologetic about it."
+        },
+        root_beer_fizz: {
+            drink: '🥤 The Root Beer Fizz',
+            tagline: '"Old soul, ice-cold pour."',
+            description: "He remembers when summers felt endless and front porches were everything. Pull up a chair — he's got a story, and it's a good one."
+        },
+        cherry_coke_fizz: {
+            drink: '🍒 The Cherry Coke Fizz',
+            tagline: '"Pop off, darling."',
+            description: "She walks in and the whole room shifts — louder, brighter, better. The night was fine before she got here, but now it's a memory."
+        },
+        shirley_fizz: {
+            drink: '🍓 The Shirley Fizz',
+            tagline: '"Growing up is optional."',
+            description: "She still orders off the kids' menu and has absolutely no regrets. Forever young, forever fizzy, forever the most fun at the table."
+        }
+    };
+
     function answer(question, value) {
         answers[question] = value;
         document.getElementById('dot-' + question).classList.remove('active');
@@ -337,55 +339,56 @@
     }
 
     function showResult() {
-        const result = document.getElementById('quiz-result');
-        result.style.display = 'block';
+        document.getElementById('quiz-result').style.display = 'block';
 
-        let drink = '', description = '';
+        // Score each drink equally across all 4 questions
+        const scores = {
+            dr_fizz: 0,
+            classic_fizz: 0,
+            orange_fizzsicle: 0,
+            root_beer_fizz: 0,
+            cherry_coke_fizz: 0,
+            shirley_fizz: 0
+        };
 
-        if (answers[4] === 'boost' || answers[3] === 'rich') {
-            if (answers[1] === 'creamy') {
-                drink = '☕ ChocoVanilla Iced Coffee';
-                description = 'Rich, chocolatey and indulgent — you need something bold to match your energy!';
-            } else {
-                drink = '☕ Caramel Iced Coffee';
-                description = 'Sweet, smooth and energizing — the perfect pick-me-up for your day!';
-            }
-        } else if (answers[4] === 'healthy' || answers[1] === 'refreshing') {
-            drink = '💧 Classic Fizz';
-            description = 'Light, bubbly and refreshing — you keep it clean and love a little fizz!';
-        } else if (answers[1] === 'fruity' || answers[3] === 'bold') {
-            if (answers[2] === 'summer' || answers[2] === 'spring') {
-                drink = '🍓 Shirley Fizz';
-                description = 'Sweet, fruity and fun — you are the life of the party!';
-            } else if (answers[3] === 'bold') {
-                drink = '🍒 Cherry Coke Fizz';
-                description = 'Bold and cherry-sweet — you have great taste and love a classic with a twist!';
-            } else {
-                drink = '🍊 Orange Fizz-Sicle';
-                description = 'Bright, citrusy and fun — you bring sunshine wherever you go!';
-            }
-        } else if (answers[1] === 'classic' || answers[2] === 'fall' || answers[2] === 'winter') {
-            if (answers[3] === 'bubbly') {
-                drink = '🥤 Root Beer Fizz';
-                description = 'Classic and comforting — you know what you like and you love it!';
-            } else {
-                drink = '🥤 Classic Fizz';
-                description = 'Cool, creamy and timeless — you are a classic through and through!';
-            }
-        } else {
-            drink = '🍓 DR. Fizz';
-            description = 'Sweet strawberry goodness — you love a treat that feels special!';
-        }
+        // Q1 — how friends describe you
+        if (answers[1] === 'sophisticated') scores.dr_fizz += 2;
+        if (answers[1] === 'classic')       { scores.classic_fizz += 2; scores.root_beer_fizz += 1; }
+        if (answers[1] === 'wild')          { scores.cherry_coke_fizz += 2; scores.shirley_fizz += 1; }
+        if (answers[1] === 'sunshine')      { scores.orange_fizzsicle += 2; scores.shirley_fizz += 1; }
 
-        document.getElementById('result-drink').textContent = drink;
-        document.getElementById('result-description').textContent = description;
+        // Q2 — ideal Saturday
+        if (answers[2] === 'porch')  { scores.root_beer_fizz += 2; scores.classic_fizz += 1; }
+        if (answers[2] === 'pool')   { scores.orange_fizzsicle += 2; scores.cherry_coke_fizz += 1; }
+        if (answers[2] === 'brunch') { scores.dr_fizz += 2; scores.cherry_coke_fizz += 1; }
+        if (answers[2] === 'kids')   { scores.shirley_fizz += 2; scores.orange_fizzsicle += 1; }
+
+        // Q3 — when you walk in a room
+        if (answers[3] === 'shift')  { scores.cherry_coke_fizz += 2; scores.dr_fizz += 1; }
+        if (answers[3] === 'steady') { scores.classic_fizz += 2; scores.root_beer_fizz += 1; }
+        if (answers[3] === 'glow')   { scores.dr_fizz += 2; scores.orange_fizzsicle += 1; }
+        if (answers[3] === 'laugh')  { scores.shirley_fizz += 2; scores.cherry_coke_fizz += 1; }
+
+        // Q4 — what you order at a restaurant
+        if (answers[4] === 'dessert') { scores.dr_fizz += 2; scores.shirley_fizz += 1; }
+        if (answers[4] === 'usual')   { scores.classic_fizz += 2; scores.root_beer_fizz += 1; }
+        if (answers[4] === 'special') { scores.orange_fizzsicle += 2; scores.cherry_coke_fizz += 1; }
+        if (answers[4] === 'fun')     { scores.shirley_fizz += 2; scores.orange_fizzsicle += 1; }
+
+        // Find highest score
+        const key = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+
+        const r = results[key];
+        document.getElementById('result-drink').textContent = r.drink;
+        document.getElementById('result-tagline').textContent = r.tagline;
+        document.getElementById('result-description').textContent = r.description;
     }
 
     function resetQuiz() {
         answers = {};
         document.getElementById('quiz-result').style.display = 'none';
         document.querySelectorAll('.quiz-question').forEach(q => q.classList.remove('active'));
-        document.querySelectorAll('.progress-dot').forEach(d => { d.classList.remove('active', 'done'); });
+        document.querySelectorAll('.progress-dot').forEach(d => d.classList.remove('active', 'done'));
         document.getElementById('q1').classList.add('active');
         document.getElementById('dot-1').classList.add('active');
     }
