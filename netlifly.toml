@@ -1,5 +1,7 @@
 [build]
   functions = "netlify/functions"
+  command = "sed -i 's/SQUARE_APP_ID_PLACEHOLDER/'\"$SQUARE_APPLICATION_ID\"'/g' shop.html"
+  publish = "."
 
 [[headers]]
   for = "/*"
