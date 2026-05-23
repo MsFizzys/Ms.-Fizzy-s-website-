@@ -2,7 +2,8 @@
   functions = "netlify/functions"
 
 [build.environment]
-  SECRETS_SCAN_OMIT_KEYS = "SQUARE_ACCESS_TOKEN,SQUARE_APPLICATION_ID"
+  SECRETS_SCAN_OMIT_PATHS = "shop.html"
+  SECRETS_SCAN_OMIT_KEYS = "SQUARE_APPLICATION_ID"
 
 [[headers]]
   for = "/*"
